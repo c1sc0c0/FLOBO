@@ -1,30 +1,3 @@
-#!/usr/bin/python
-
-#from pytube import YouTube
-#
-#def download_captions(url, language='en', output_path='.'):
-#    yt = YouTube(url)
-#    yt.bypass_age_gate()
-#    # Check if the video has captions in the specified language
-#    print(yt.captions)
-#    if language in yt.captions:
-#        caption = yt.captions[language]
-#        caption_text = caption.generate_srt_captions()
-#
-#        # Save the captions to a file
-#        output_file = f"{output_path}/{yt.title}.srt"
-#        with open(output_file, 'w', encoding='utf-8') as file:
-#            file.write(caption_text)
-#        
-#        print(f"Captions saved to: {output_file}")
-#    else:
-#        print(f"No captions found for language: {language}")
-#
-## Example usage
-#url = 'https://www.youtube.com/watch?v=7yOtsZNU4Us'
-#download_captions(url, language='en', output_path='./data/youtube')
-
-
 from pytube import YouTube
 from datetime import timedelta
 from bs4 import BeautifulSoup
