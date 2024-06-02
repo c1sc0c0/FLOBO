@@ -1,6 +1,9 @@
 # Python Dependencies
 /venv/*
 
+# Python Notebook Stuff
+.ipynb*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
