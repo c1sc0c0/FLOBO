@@ -15,3 +15,5 @@ __pycache__/
 .DS_Store
 .AppleDouble
 .LSOverride
+chromadb/chroma.sqlite3
+chromadb/*/*
