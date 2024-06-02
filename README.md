@@ -18,12 +18,20 @@ Flobo is a Yoga Bot that can suggest Yoga flows based on user input. It's a pers
 * jupyter
 * scrapy
 * pytube
+* numpy
 
 ## Getting Started
 
 The best way to explore this is to run the Jupyter notebooks.
 
-    jupyter run
+    jupyter lab
+    
+# Development Notes
+
+Don't forget to clean the output from the .ipynb files before git commit!
+
+    jupyter nbconvert --clear-output --inplace *.ipynb
+
 
 
 
