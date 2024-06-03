@@ -9,7 +9,6 @@
 
  * Do we need to do entity extraction on the input? 
  
- 
     Can you please share your age?
     Have you practiced yoga before? If so, for how long?
     What is your current experience level with yoga (beginner, intermediate, advanced)?

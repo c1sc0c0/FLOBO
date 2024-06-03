@@ -33,9 +33,13 @@ The best way to explore this is to run the Jupyter notebooks. demo.ipynb contain
     
 # Development Notes
 
-Don't forget to clean the output from the .ipynb files before git commit!
+Don't forget to clean the output from the .ipynb files before git commit! (clean.sh)
 
     jupyter nbconvert --clear-output --inplace *.ipynb
+
+Periodically push to destination git repository.
+
+    git push destination main
 
 
 
