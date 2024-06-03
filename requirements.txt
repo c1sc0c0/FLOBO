@@ -6,3 +6,4 @@ scrapy
 pytube
 numpy
 pre-commit
+pytest

@@ -10,7 +10,7 @@ Flobo is a Yoga Bot that can suggest Yoga flows based on user input. It's a pers
     source venv/bin/activate
     pip install -r requirements.txt
     
-## Dependencies
+## Python Dependencies
 
 * ollama
 * clips
@@ -20,9 +20,14 @@ Flobo is a Yoga Bot that can suggest Yoga flows based on user input. It's a pers
 * pytube
 * numpy
 
+# Homebrew Dependencies
+
+* imagemagick
+* libheif
+
 ## Getting Started
 
-The best way to explore this is to run the Jupyter notebooks.
+The best way to explore this is to run the Jupyter notebooks. demo.ipynb contains a chat demo and playground.ipynb is where development happens.
 
     jupyter lab
     
