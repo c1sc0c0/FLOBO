@@ -54,6 +54,7 @@ def call_ollama(input_text, model):
     
     
     # Check the structure of the response
+    # TODO: print the scoring?
     for chunk in stream:
         print(chunk['message']['content'], end='', flush=True)
 
