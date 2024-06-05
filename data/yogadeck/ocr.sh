@@ -24,6 +24,7 @@ for image in "$INPUT_DIR"/*.HEIC; do
   magick "$INPUT_DIR/$base_name.png" -threshold "50%" "$INPUT_DIR/$base_name.png"
   magick "$INPUT_DIR/$base_name.png" -negate "$INPUT_DIR/$base_name.png"
 
+  # Tesseract sucks, replaced with Swift-based app.
   # tesseract "$image" "$output_file"
   # tesseract "$INPUT_DIR/$base_name.png" "$OUTPUT_DIR/$output_file" -l eng
   ./data/correct.swift "$INPUT_DIR/$base_name.png" > "$OUTPUT_DIR/$output_file.txt"
