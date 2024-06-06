@@ -7,3 +7,4 @@ pytube
 numpy
 pre-commit
 pytest
+nltk

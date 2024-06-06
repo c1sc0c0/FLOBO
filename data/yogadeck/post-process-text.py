@@ -1,20 +1,31 @@
 import os
 import re
 
-def remove_fig_mentions(directory):
-    """Remove all mentions of (fig. n): from the contents of files in the specified directory."""
+def remove_trailing_period(line):
+    """Remove trailing period if the line starts with ( and ends with ) before the final period."""
+    pattern = r'^\(.*\)\.$'
+    if re.match(pattern, line.strip()):
+        return line.strip()[:-1]
+    return line.strip()
+
+def process_file(filepath):
+    """Process a file to remove the trailing period from specific lines."""
+    with open(filepath, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+    
+    cleaned_lines = [remove_trailing_period(line) for line in lines]
+    
+    with open(filepath, 'w', encoding='utf-8') as file:
+        file.write("\n".join(cleaned_lines) + "\n")
+    
+    print(f"Processed file: {filepath}")
+
+def process_directory(directory):
+    """Process all text files in the specified directory to remove trailing periods."""
     for filename in os.listdir(directory):
         if filename.endswith(".txt"):
-            full_path = os.path.join(directory, filename)
-            with open(full_path, 'r') as file:
-                content = file.read()
-
-            # Remove all instances of (fig. n):
-            modified_content = re.sub(r'\(fig\. \d+\):', '', content)
-
-            with open(full_path, 'w') as file:
-                file.write(modified_content)
-            print(f"Processed '{filename}'")
+            filepath = os.path.join(directory, filename)
+            process_file(filepath)
 
 # Replace '/path/to/your/directory' with the actual directory path containing your .txt files
-remove_fig_mentions('texts/')
+process_directory('texts/')

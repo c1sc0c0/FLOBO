@@ -2,7 +2,14 @@
 
 * 2024-06-01: Setup initial infrastructure: Jupyter + ChromaDB + CLIPS, let's forget about building a web UI for now.
 * 2024-06-02: Super naive implementation done. Need to focus on defining clear inputs, outputs & data sanitization next.
-* 2024-06-05: Manual cleanup of the scanned files.
+* 2024-06-05: Manual cleanup of the scanned files. Gitbrief side-quest. Summarizer for the .txt files.
+
+# To Check
+
+* Using llama3 function calling / tools to call CLIPS?
+* Even IF the LLM can execute CLIPS statements, will it be able to keep state like in the REPL?
+* Looks like we can put the small dataset completely in the context (± 5k token). Try that vs. RAG?
+
 # Literature
 
 * https://arxiv.org/pdf/2402.12091
@@ -26,6 +33,7 @@
 * Current LLM AUTO-LEARNING: ??? No higher-level learning currently ???
 * Current LLM GENERALIZATION: ??? Limited ???
 * Current LLM REASONING: Very limited, can't recover from mistakes.
+* Isn't it amazing we had these long discussions 20 years ago about trusting Wikipedia vs. a "Real" Encyclopedias & now we're like "Feed all them interwebs to them GPTs, YOLO!"
 
 ## Input
 

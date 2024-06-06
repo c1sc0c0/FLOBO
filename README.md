@@ -19,6 +19,7 @@ Flobo is a Yoga Bot that can suggest Yoga flows based on user input. It's a pers
 * scrapy
 * pytube
 * numpy
+* nltk
 
 # Homebrew Dependencies
 
