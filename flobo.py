@@ -1,7 +1,19 @@
-import sys
+import sys, os
 import ollama
 import clips
 import chromadb
+
+def concatenate_files(directory):
+    """Concatenate contents of all .txt files in the directory."""
+    concatenated_text = ""
+    
+    for filename in os.listdir(directory):
+        if filename.endswith(".txt"):
+            filepath = os.path.join(directory, filename)
+            with open(filepath, 'r', encoding='utf-8') as file:
+                concatenated_text += file.read() + "\n"
+    
+    return concatenated_text
 
 def create_rag_prompt(question):
     client = chromadb.PersistentClient(path="chromadb")
@@ -14,6 +26,13 @@ def create_rag_prompt(question):
     context = results["documents"][0][0] # Meh, need to discover filtering more
     
     return f"Given the following context: \n\t{context} \n\nAnswer this question: \n\t{question}"
+
+def create_dump_prompt(question):
+
+    context = concatenate_files("data/yogadeck/texts/")
+    return f"Given the following context: \n\t{context} \n\nAnswer this question: \n\t{question}"
+
+
 
 def create_symbolic_prompt(question):
 
@@ -31,9 +50,18 @@ def call_ollama(input_text, model):
                 'content': input_text,
             }
         ], stream=True)
-    
+        
     if model == "rag":
         prompt = create_rag_prompt(input_text)
+        stream = ollama.chat(model='llama3', messages=[
+            {
+                'role': 'user',
+                'content': prompt,
+            }
+        ], stream=True)
+    
+    if model == "dump":
+        prompt = create_dump_prompt(input_text)
         stream = ollama.chat(model='llama3', messages=[
             {
                 'role': 'user',
@@ -60,12 +88,12 @@ def call_ollama(input_text, model):
 
 def usage():
     print("Usage: python flobo.py <model>")
-    print("<model>: naked | rag | symbol")
+    print("<model>: naked | dump | rag | symbol")
     sys.exit(1)
 def main():
     if len(sys.argv) < 2:
         usage()
-    if sys.argv[1] not in ["naked", "rag", "symbol"]:
+    if sys.argv[1] not in ["naked", "rag", "symbol", "dump"]:
         usage()
     model = sys.argv[1]
     print("Flobo running %s model. Type '/exit' to quit." % sys.argv[1])
