@@ -10,6 +10,7 @@
 * Using llama3 function calling / tools to call CLIPS?
 * Even IF the LLM can execute CLIPS statements, will it be able to keep state like in the REPL?
 * Looks like we can put the small dataset completely in the context (± 5k token). Try that vs. RAG?
+* Combined RAM+VRAM vs. CUDA architecture? TensorFlow / PyTorch vs. Metal?
 
 # Literature
 

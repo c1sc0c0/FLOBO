@@ -1,4 +1,4 @@
-# Subject: Application for Cat's Grant [10k, 50k](#)
+# Subject: Application for Cat's Grant [10k, 50k]
 
 I've applied for both the 10k and 50k grants, calling them Scope A & B in this application. I can't apply for the 100k grant in good honour given my time constraints.
 
