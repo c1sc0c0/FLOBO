@@ -3,7 +3,9 @@
 * 2024-06-01: Setup initial infrastructure: Jupyter + ChromaDB + CLIPS, let's forget about building a web UI for now.
 * 2024-06-02: Super naive implementation done. Need to focus on defining clear inputs, outputs & data sanitization next.
 * 2024-06-05: Manual cleanup of the scanned files. Gitbrief side-quest. Summarizer for the .txt files.
-* 2024-06-07: Dumped the whole yogadeck set into context.
+* 2024-06-07: Dumped the whole yogadeck set into context. Chat with Benjamin.
+* 2024-06-09: Studied the Yan paper in detail. Studying the LogiCOT paper.
+* 2024-06-10: Grant rewrite.
 
 # To Check
 
@@ -11,10 +13,12 @@
 * Even IF the LLM can execute CLIPS statements, will it be able to keep state like in the REPL?
 * Looks like we can put the small dataset completely in the context (± 5k token). Try that vs. RAG?
 * Combined RAM+VRAM vs. CUDA architecture? TensorFlow / PyTorch vs. Metal?
+* Does the Doherty Threshold (400 ms) apply to AI interactions? Can we measure it? Do LLMs now pass it? Chat vs. Voice? In case of speech, how many words per minute?
 
 # Literature
 
-* https://arxiv.org/pdf/2402.12091
+* Yan, Junbing, Chengyu Wang, Jun Huang, and Wei Zhang. “Do Large Language Models Understand Logic or Just Mimick Context?” arXiv, February 19, 2024. http://arxiv.org/abs/2402.12091.
+* Liu, Hanmeng, Zhiyang Teng, Leyang Cui, Chaoli Zhang, Qiji Zhou, and Yue Zhang. “LogiCoT: Logical Chain-of-Thought Instruction-Tuning.” arXiv, October 28, 2023. http://arxiv.org/abs/2305.12147.
 
 # Brainstorming
 
