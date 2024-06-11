@@ -1,11 +1,11 @@
-# Subject: Application for Cat's Grant [50k, 100k](#)
+# Subject: Application for Cat's Grant [50k, 100k]
 
 I applied for both the 50k and 100k grants. Although I can’t justify applying for the full 100k grant due to time constraints, I might need to invest in compute resources, which could push the total beyond the 50k base.
 
 ## Summary
 * SCOPE: 50K + compute - ± 90 days - 2.5 days per week
 * TOPICS: LLMs, Symbolic AI, Neuro-Symbolic AI, Benchmarking
-* RESEARCH QUESTIONS: 1) Do Large Language Models Understand Logic or Just Mimick Context? (Replication) 2) How does implementation architecture impact correctness & speed of logical inference?
+* RESEARCH QUESTIONS: 1) Do Large Language Models Understand Logic or Just Mimick Context? (Replication) 2) How does implementation architecture impact correctness & speed of logical inference (Benchmarking)?
 * RESEARCH ARTIFACTS: Code + Data used in replication of Junbin Yan & al. paper. System to benchmark logical correctness & speed of inference.
 
 ## Intro
@@ -34,6 +34,7 @@ While naively trying to implement this kind of system I ran into two obvious que
 - Use context to try to teach the LLM the rules.
 - In-model through fine-tunes.
 - In the foundation model.
+
 **2) What kind of approach gives acceptable latency?**
 - Conversational UX needs sub-200ms latency & 150 (spoken) to 300 (read) tpm.
 - This rules out complex cloud-based pipelines & bigger contexts.
@@ -50,7 +51,7 @@ Yan & al. confirm that in-context learning of logical rules simply increases the
 
 Yet at the same time their research shows that Chain of Thought prompting seems to improve the performance of large-scale models on logical reasoning tasks, especially when using In-Context Example-based guidance rather prompt-based guidance.
 
-Yan & al used counterfactual prompts & prompt replacement techniques to evaluate impact on logical reasoning
+Yan & al used counterfactual prompts & prompt replacement techniques to evaluate impact on logical reasoning.
 
 I would like to replicate their research & explore some of the additional open questions I discovered in the paper:
 
@@ -58,8 +59,9 @@ I would like to replicate their research & explore some of the additional open q
 * Can fine-tuning approaches improve logical reasoning?
 * How does in-model logical reasoning compare to in-context reasoning?
 
-### Benchmark
+### Benchmarking
 
+I propose benchmarking several approaches to integrating logical reasoning into transformer-based systems and testing them for both correctness and speed.
 
 ### Literature
 
